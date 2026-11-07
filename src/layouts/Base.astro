@@ -1,0 +1,40 @@
+---
+import { EmDashBodyEnd, EmDashBodyStart, EmDashHead } from 'emdash/ui';
+import { createPublicPageContext } from 'emdash/page';
+import { profile } from '../data/profile';
+import '../styles/tokens.css';
+import '../styles/theme.css';
+interface Props { title?: string; pageTitle?: string | null; description?: string | null; image?: string | null; canonical?: string | null; robots?: string | null; type?: 'website' | 'article'; content?: { collection: string; id: string; slug?: string | null }; }
+const { title, pageTitle, description, image, canonical, robots, type = 'website', content } = Astro.props;
+const fullTitle = title ? `${title} | ${profile.name}` : `${profile.siteTitle} | ${profile.name}`;
+const pageCtx = createPublicPageContext({ Astro, kind: content ? 'content' : 'custom', pageType: type, title: fullTitle, pageTitle: pageTitle ?? title ?? profile.siteTitle, description: description || profile.description, canonical: canonical ?? new URL(Astro.url.pathname, Astro.url.origin).href, image, content, seo: { ogImage: image, robots }, siteName: profile.name });
+const links = [{ label: 'Trail', href: '/' }, { label: 'About', href: '/about' }, { label: 'Projects', href: '/work' }, { label: 'Travel', href: '/overlook' }, { label: 'Contact', href: '/contact' }];
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#203f35" />
+    <title>{fullTitle}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/app/pixel-font.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/app/font.woff2?v=plex-1" as="font" type="font/woff2" crossorigin />
+    <EmDashHead page={pageCtx} />
+  </head>
+  <body>
+    <EmDashBodyStart page={pageCtx} />
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <header class="site-header">
+      <a href="/" class="wordmark"><img src="/favicon.svg" width="36" height="36" alt="" /><span>{profile.name}</span></a>
+      <nav aria-label="Main navigation">{links.map(({ label, href }) => <a href={href} aria-current={currentPath === href || (href === '/work' && currentPath.startsWith('/work/')) ? 'page' : undefined}>{label}</a>)}</nav>
+    </header>
+    <main id="main-content" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div><a href="/" class="footer-name">{profile.name}</a><p>MIS at UT Austin. From Dallas.</p></div>
+      <nav aria-label="Elsewhere"><a href={profile.github}>GitHub</a><a href={profile.linkedin}>LinkedIn</a><a href={`mailto:${profile.email}`}>Email</a></nav>
+    </footer>
+    <EmDashBodyEnd page={pageCtx} />
+  </body>
+</html>

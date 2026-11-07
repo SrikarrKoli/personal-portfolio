@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#121212"/>
+  <g fill="#e5e5e5">
+    <rect x="80" y="70" width="45" height="30" rx="4"/>
+    <rect x="165" y="70" width="45" height="30" rx="4"/>
+    <rect x="250" y="70" width="45" height="30" rx="4"/>
+    <rect x="335" y="70" width="45" height="30" rx="4"/>
+    <rect x="420" y="70" width="45" height="30" rx="4"/>
+    <rect x="505" y="70" width="45" height="30" rx="4"/>
+    <rect x="590" y="70" width="45" height="30" rx="4"/>
+    <rect x="675" y="70" width="45" height="30" rx="4"/>
+    <rect x="760" y="70" width="45" height="30" rx="4"/>
+    <rect x="845" y="70" width="45" height="30" rx="4"/>
+    <rect x="930" y="70" width="45" height="30" rx="4"/>
+    <rect x="1015" y="70" width="45" height="30" rx="4"/>
+    <rect x="80" y="800" width="45" height="30" rx="4"/>
+    <rect x="165" y="800" width="45" height="30" rx="4"/>
+    <rect x="250" y="800" width="45" height="30" rx="4"/>
+    <rect x="335" y="800" width="45" height="30" rx="4"/>
+    <rect x="420" y="800" width="45" height="30" rx="4"/>
+    <rect x="505" y="800" width="45" height="30" rx="4"/>
+    <rect x="590" y="800" width="45" height="30" rx="4"/>
+    <rect x="675" y="800" width="45" height="30" rx="4"/>
+    <rect x="760" y="800" width="45" height="30" rx="4"/>
+    <rect x="845" y="800" width="45" height="30" rx="4"/>
+    <rect x="930" y="800" width="45" height="30" rx="4"/>
+    <rect x="1015" y="800" width="45" height="30" rx="4"/>
+  </g>
+  <rect x="90" y="140" width="480" height="610" fill="#262626" stroke="#d4d4d4" stroke-width="3"/>
+  <circle cx="330" cy="445" r="140" fill="#d4d4d4"/>
+  <rect x="630" y="140" width="480" height="610" fill="#262626" stroke="#d4d4d4" stroke-width="3"/>
+  <polygon points="870,260 1030,610 710,610" fill="#a3a3a3"/>
+  <rect x="605" y="118" width="530" height="654" fill="none" stroke="#ef4444" stroke-width="10"/>
+  <text x="95" y="782" font-family="monospace" font-size="24" fill="#f59e0b">KODAK TRI-X 400 // 24A</text>
+  <text x="635" y="782" font-family="monospace" font-size="24" fill="#f59e0b">KODAK TRI-X 400 // 25</text>
+</svg>

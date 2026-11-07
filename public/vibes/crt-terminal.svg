@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#071109"/>
+  <rect x="60" y="60" width="1080" height="780" rx="28" fill="#0b1c0e" stroke="#33ff66" stroke-width="4"/>
+  <g stroke="#14381b" stroke-width="2">
+    <line x1="60" y1="140" x2="1140" y2="140"/>
+    <line x1="60" y1="220" x2="1140" y2="220"/>
+    <line x1="60" y1="300" x2="1140" y2="300"/>
+    <line x1="60" y1="380" x2="1140" y2="380"/>
+    <line x1="60" y1="460" x2="1140" y2="460"/>
+    <line x1="60" y1="540" x2="1140" y2="540"/>
+    <line x1="60" y1="620" x2="1140" y2="620"/>
+    <line x1="60" y1="700" x2="1140" y2="700"/>
+  </g>
+  <text x="120" y="210" font-family="monospace" font-size="38" fill="#33ff66">$ cf deploy --env=cyberspace</text>
+  <text x="120" y="300" font-family="monospace" font-size="32" fill="#88ffaa">&gt; V8 ISOLATE READY IN 0.8ms</text>
+  <text x="120" y="380" font-family="monospace" font-size="32" fill="#ffb000">&gt; 330+ CITIES CONNECTED</text>
+  <rect x="120" y="460" width="480" height="220" fill="none" stroke="#33ff66" stroke-width="4"/>
+  <text x="160" y="590" font-family="monospace" font-size="76" font-weight="700" fill="#33ff66">TTY://01</text>
+  <rect x="540" y="532" width="28" height="64" fill="#33ff66"/>
+</svg>

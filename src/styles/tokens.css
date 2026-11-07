@@ -1,0 +1,91 @@
+/*
+  tokens.css -- the design tokens for this template. These are the
+  defaults; to customize the site, override any variable in
+  src/styles/theme.css rather than editing this file. Declarations in
+  theme.css are unlayered, so they always beat these @layer base
+  defaults -- no specificity tricks needed.
+*/
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+
+    /* Core Palette: Warm Bauhaus Paper in light mode, Deep Studio Canvas in dark mode */
+    --color-bg: light-dark(#f6f1e7, #0e0e11);
+    --color-text: light-dark(#161514, #f4f0e8);
+    --color-muted: light-dark(#5c5852, #a39e93);
+    --color-border: light-dark(#d8cfc0, #2a292e);
+    --color-surface: light-dark(#fdfbf7, #17171c);
+    --color-brand: light-dark(#c83e2b, #e05a47);
+    --color-on-brand: #fdfbf7;
+    --color-brand-ring: color-mix(in srgb, var(--color-brand) 14%, transparent);
+    --color-danger: light-dark(#dc2626, #f87171);
+
+    /* Bauhaus + Rothko Color Field Accents */
+    --color-rothko-crimson: #b82921;
+    --color-rothko-sienna: #d95d24;
+    --color-rothko-ochre: #e8a317;
+    --color-rothko-ultramarine: #1d3557;
+    --color-bauhaus-ink: light-dark(#161514, #f4f0e8);
+
+    /* Typography */
+    --font-body: system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-weight-heading: 600;
+    --font-weight-display: 700;
+
+    /* Type scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1.0625rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.75rem;
+    --font-size-4xl: 3.5rem;
+
+    /* Line heights */
+    --leading-tight: 1.06;
+    --leading-snug: 1.2;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.7;
+
+    /* Letter spacing */
+    --tracking-tight: -0.025em;
+    --tracking-wide: 0.08em;
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+
+    /* Layout */
+    --max-width: 720px;
+    --wide-width: 1200px;
+    --radius: 2px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 200ms ease;
+    --transition-slow: 300ms ease;
+  }
+
+  @supports not (color: light-dark(#000, #fff)) {
+    :root {
+      color-scheme: light;
+      --color-bg: #f6f1e7;
+      --color-text: #161514;
+      --color-muted: #5c5852;
+      --color-border: #d8cfc0;
+      --color-surface: #fdfbf7;
+      --color-brand: #c83e2b;
+      --color-danger: #dc2626;
+      --color-bauhaus-ink: #161514;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project; index?: number; }
+const { project } = Astro.props;
+---
+<article class="project-row">
+
+  <div class="project-copy">
+    <p class="project-category">{project.category} <span> / {project.status}</span></p>
+    <h2><a href={`/work/${project.id}`}>{project.title}</a></h2>
+    <p class="project-summary">{project.summary}</p>
+    <p class="project-role">{project.role}</p>
+  </div>
+  <a class="project-open text-link" href={`/work/${project.id}`} aria-label={`Read about ${project.title}`}>View project <span aria-hidden="true">↗</span></a>
+</article>
+<style>
+.project-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;padding:2.25rem 0;border-top:1px solid var(--color-border);align-items:start}
+.project-category,.project-role{font-size:.8rem;color:var(--color-muted)}
+.project-index{padding-top:.2rem;font-family:var(--font-mono)}
+.project-category{margin:0 0 .7rem}.project-category span{opacity:.9}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);margin:0 0 .8rem}h2 a{color:var(--color-text);text-decoration:none}h2 a:hover{text-decoration:underline;text-underline-offset:.2em}
+.project-summary{max-width:44rem;margin:0;line-height:1.7;color:var(--color-muted)}
+.project-role{margin:1rem 0 0}.project-open{font-size:.9rem;white-space:nowrap;align-self:center}
+@media(max-width:700px){.project-row{grid-template-columns:minmax(0,1fr);gap:1rem;padding:1.75rem 0}.project-open{grid-column:1}.project-category span{display:block;margin-top:.25rem}}
+</style>

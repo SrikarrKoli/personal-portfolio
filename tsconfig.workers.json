@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "@cloudflare/workers-types",
+      "vite/client"
+    ],
+    "noEmit": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/worker.ts",
+    "src/app-worker.ts",
+    "cloudflare.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".cloudflare",
+    "cloudflare-project",
+    "work"
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#263e2b">
+  <meta name="description" content="Srikar Kolipaka — MIS at UT Austin, exploring product, AI, and the world outside. Take a look around.">
+  <title>Srikar Kolipaka · A little room to explore</title>
+  <link rel="icon" href="/app/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/app/pixel-font.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/app/landscape.css">
+  <script src="/app/landscape.js" type="module"></script>
+</head>
+<body>
+  <a class="skip" href="#navigation">Skip to navigation</a>
+  <div class="landscape" role="img" aria-label="A pixel-art landscape: Srikar rests against a tree and looks across a sunlit meadow toward distant mountains."><canvas id="living-scene" aria-hidden="true"></canvas></div>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="pollen" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="scene-interactions" aria-label="Interactive landscape">
+    <div class="scene-stage">
+      <button class="hotspot tree" data-effect="leaves" aria-label="Shake the tree and watch the leaves fall"></button>
+      <button class="hotspot trunk" data-effect="leaves" aria-label="Tap the tree trunk to make leaves fall"></button>
+      <button class="hotspot clouds" data-effect="clouds" aria-label="Send a breeze through the clouds"></button>
+      <button class="hotspot river" data-effect="ripples" aria-label="Make ripples in the river"></button>
+      <button class="hotspot mountains" data-effect="birds" aria-label="Watch birds fly over the mountains"></button>
+      <button class="hotspot flowers" data-effect="butterflies" aria-label="Watch butterflies rise from the flowers"></button>
+    </div>
+  </div>
+  <div class="scene-effects" aria-hidden="true"></div>
+  <div id="scene-status" class="sr-only" role="status" aria-live="polite"></div>
+  <header class="site-header">
+    <a class="wordmark" href="#" aria-label="Srikar Kolipaka, home"><span class="mark" aria-hidden="true">sk.</span><span>Srikar Kolipaka<small>MIS at UT Austin.</small></span></a>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="/about">About me</a><a href="/hobbies">Hobbies</a><a href="/work">Projects</a><a href="/career">Career</a><a href="/contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main>
+  <section class="home" id="home" aria-label="Portfolio landscape"><a class="scroll-cue" href="/about">About me <span aria-hidden="true">↓</span></a>
+  <footer><span class="footer-links"><a href="https://github.com/SrikarrKoli" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://linkedin.com/in/srikar-kolipaka" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><button id="motion" type="button" aria-pressed="false">Pause motion</button></span></footer>
+  </section>
+
+  </main>
+  <noscript><style>.introduction nav{display:none}</style><div class="no-script">Explore my <a href="https://hello-internet.srikarrkolipaka.workers.dev/about">About page</a>, <a href="https://hello-internet.srikarrkolipaka.workers.dev/work">Projects</a>, or <a href="mailto:srikarrkolipaka@gmail.com">send an email</a>.</div></noscript>
+</body>
+</html>

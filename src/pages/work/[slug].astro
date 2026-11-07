@@ -1,0 +1,64 @@
+---
+import { decodeSlug, getEmDashEntry } from 'emdash';
+import { Image, PortableText } from 'emdash/ui';
+import Base from '../../layouts/PortfolioPage.astro';
+import { projects } from '../../data/projects';
+const slug = decodeSlug(Astro.params.slug);
+if (!slug) return Astro.rewrite('/404');
+const project = projects.find((item) => item.id === slug);
+// Retain access to published CMS project URLs without showing starter entries in the portfolio.
+const cmsResult = project ? null : await getEmDashEntry('projects', slug);
+if (cmsResult?.error) return new Response('Could not load the project', { status: 500 });
+const cmsProject = cmsResult?.entry;
+if (!project && !cmsProject) return Astro.rewrite('/404');
+if (cmsResult && Astro.cache?.enabled) Astro.cache.set(cmsResult.cacheHint);
+const title = project?.title ?? cmsProject!.data.title;
+const description = project?.summary ?? cmsProject?.data.summary;
+const position = projects.findIndex((item) => item.id === slug);
+const nextProject = project ? projects[(position + 1) % projects.length] : null;
+---
+<Base title={title} description={description} type="article" content={cmsProject ? { collection: 'projects', id: cmsProject.data.id, slug } : undefined}>
+  <article class="page-wrap project-detail">
+    <a href="/work" class="text-link back-link">All projects</a>
+    {project ? <>
+      <header class="page-header">
+        <p class="eyebrow">{project.category}</p>
+        <h1>{project.title}</h1>
+        <p class="lead">{project.summary}</p>
+        <div class="project-links">
+          {project.repo && <a class="button" href={project.repo}>View repository</a>}
+          {project.demo && <a class="button button-secondary" href={project.demo}>Visit live app</a>}
+          {project.presentation && <a class="button" href={project.presentation}>View presentation</a>}
+        </div>
+      </header>
+      <dl class="project-facts">
+        <div><dt>My role</dt><dd>{project.role}</dd></div>
+        <div><dt>Stage</dt><dd>{project.status}</dd></div>
+        <div><dt>Tools & technologies</dt><dd>{project.stack.join(' · ')}</dd></div>
+      </dl>
+      <div class="project-body">
+        <section><h2>The problem</h2><p>{project.problem}</p></section>
+        <section><h2>What we built</h2><p>{project.solution}</p></section>
+        <section><h2>How it works</h2><ol>{project.howItWorks.map((step) => <li>{step}</li>)}</ol></section>
+        <section><h2>My contribution</h2><p>{project.contribution}</p></section>
+        <section class="project-sources"><h2>Project documentation</h2><ul>{project.source.map((url) => <li><a href={url}>{url.includes('README') ? 'Project README' : url.includes('PRESENTATION') ? 'Implementation & presentation notes' : url.includes('About-ME') ? 'GitHub profile & project background' : url.includes('arnavvalvekar') ? 'Original team repository' : 'Repository & implementation'}</a></li>)}</ul></section>
+      </div>
+      {nextProject && <nav class="next-project" aria-label="Next project"><p>Next project</p><a href={`/work/${nextProject.id}`}>{nextProject.title} <span aria-hidden="true">↗</span></a></nav>}
+    </> : cmsProject && <>
+      <header class="page-header"><h1 {...cmsProject.edit.title}>{cmsProject.data.title}</h1><p class="lead" {...cmsProject.edit.summary}>{cmsProject.data.summary}</p></header>
+      {cmsProject.data.featured_image && <div class="cms-image"><Image image={cmsProject.data.featured_image} /></div>}
+      <div class="project-body prose" {...cmsProject.edit.content}><PortableText value={cmsProject.data.content} /></div>
+    </>}
+  </article>
+</Base>
+<style>
+.back-link{display:inline-block;margin-top:3rem;font-size:.85rem}
+.project-detail .page-header{padding-top:2.5rem;max-width:58rem}
+.project-links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.project-facts{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:2rem;margin:0 0 4rem;padding:1.5rem 0;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border)}
+dt{color:var(--color-muted);font-size:.8rem;margin-bottom:.55rem}dd{margin:0;font-size:.95rem;line-height:1.6}
+.project-body{max-width:48rem;margin-left:auto;margin-right:auto}.project-body section{margin-bottom:3rem}.project-body h2{font-size:1.7rem;margin-bottom:1rem}.project-body p,.project-body li{color:var(--color-muted);line-height:1.8}.project-body ol{padding-left:1.4rem}.project-body li{padding-left:.35rem;margin-bottom:.85rem}.project-sources{padding-top:1.5rem;border-top:1px solid var(--color-border)}.project-sources h2{font-size:1.1rem}.project-sources ul{padding-left:1.1rem}.project-sources a{font-size:.9rem;text-underline-offset:.2em}
+.next-project{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:2rem 0 4rem;border-top:1px solid var(--color-border)}.next-project p{color:var(--color-muted);font-size:.9rem}.next-project a{font-family:var(--font-heading);font-size:1.6rem;text-decoration:none}
+.cms-image{max-width:48rem;margin:0 auto 3rem}.cms-image :global(img){width:100%;height:auto}
+@media(max-width:700px){.project-facts{grid-template-columns:1fr;gap:1.25rem;margin-bottom:3rem}.next-project{align-items:flex-start;flex-direction:column}.back-link{margin-top:2rem}}
+</style>

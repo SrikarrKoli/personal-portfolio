@@ -1,0 +1,27 @@
+---
+interface Props { variant?: 'home' | 'overlook'; }
+const { variant = 'home' } = Astro.props;
+---
+<figure class:list={['landscape', variant]}>
+  <svg viewBox="0 0 800 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pixel landscape of a winding hiking trail, alpine peaks, a turquoise lake, and forest" preserveAspectRatio="xMidYMid slice">
+    <rect width="800" height="540" fill="#c9dedc" />
+    <path d="M45 80h100v-12h52v12h32v18H45zM555 60h90V46h55v14h42v18H555z" fill="#eef2e7" />
+    <path d="M-30 270 75 149l40 39 84-112 49 70 34-19 114 149 80-118 47 29L621 58l85 147 39-32 85 115v150H-30z" fill="#9eb4ad" />
+    <path d="m115 188 84-112 49 70-23-8-18 22-16-30-24 37-15-6zM523 187 621 58l85 147-52-29-22-48-22 30-19-26-31 51z" fill="#eff3e9" />
+    <path d="m-70 373 176-148 58 33 99-91 104 131 96-53 65 22 133-91 107 159 60 25v180H-70z" fill="#75968a" />
+    <path d="m-20 339 156 30 109-51 164 27 175-31 143 54 89-8v180H-20z" fill="#9db17a" />
+    <path d="m345 354 132-22 111 11 74 37-28 40-108 27-153-31-57-24z" fill="#dbe4bf" />
+    <path d="m359 356 117-13 102 12 69 29-25 24-99 23-143-28-50-18z" fill="#69aeb0" />
+    <path d="m401 372 70-6 79 7M439 397l88 8 54-12" fill="none" stroke="#a5d0c8" stroke-width="5" />
+    <path d="m139 540 60-55 78-13 42-37-16-28-63-34 15-24 37-15h27l-39 26 66 38 16 40-51 51-69 22-24 29z" fill="#ddc58e" />
+    <g fill="#315a46"><path d="m55 232-49 114h25l-43 65h109l-36-65h23zM141 284l-37 87h20l-32 49h83l-28-49h18zM714 252l-44 102h24l-39 60h99l-33-60h22zM772 320l-38 89h19l-31 48h87l-29-48h19z" /></g>
+    <g fill="#244d3c"><path d="M52 540V422H31l50-83 44 83h-18v118zM654 540V433h-26l49-88 50 88h-27v107z" /></g>
+    <g fill="#59744c"><path d="m370 288-19 45h13l-19 26h50l-19-26h12zM413 281l-15 36h9l-14 22h41l-16-22h11zM587 270l-15 36h9l-14 22h41l-16-22h11z" /></g>
+    <g transform="translate(267 417)"><path d="M0 0h17v5h5v13H0z" fill="#302d29" /><path d="M2 5h15v16H2z" fill="#c58f65" /><path d="M0 20h19v24H0z" fill="#b98035" /><path d="M-5 22h5v19h-5z" fill="#d9a17a" /><path d="M19 22h5v19h-5z" fill="#d9a17a" /><path d="M0 44h7v17h-9v-5h2zM12 44h7v17h-9v-5h2z" fill="#29463d" /><path d="M4 23h11v18H4z" fill="#587365" /></g>
+    <g transform="translate(323 316)"><path d="M14 15h7v53h-7z" fill="#6c6547" /><path d="M0 0h54v22H0z" fill="#c1a16a" /><path d="m44 5 6 6-6 6M10 11h35" fill="none" stroke="#4b5139" stroke-width="3" /></g>
+  </svg>
+  <figcaption><span>Alpine lakes. Forest paths. Room to explore.</span><span>Srikar’s trail</span></figcaption>
+</figure>
+<style>
+.landscape{overflow:hidden;border:1px solid var(--color-border);background:#c9dedc}.landscape svg{width:100%;height:100%;min-height:320px;object-fit:cover;image-rendering:pixelated;shape-rendering:crispEdges}.landscape figcaption{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;font-size:11px;color:var(--color-muted);background:var(--color-surface);border-top:1px solid var(--color-border)}.overlook svg{max-height:520px}.overlook figcaption{font-size:12px}@media(max-width:600px){.landscape svg{min-height:280px}.landscape figcaption span:last-child{display:none}}
+</style>

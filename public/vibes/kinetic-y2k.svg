@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="y2k" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12092b"/>
+      <stop offset="50%" stop-color="#1e1b6e"/>
+      <stop offset="100%" stop-color="#00b4d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#y2k)"/>
+  <ellipse cx="600" cy="450" rx="440" ry="180" fill="none" stroke="#e0fbfc" stroke-width="5" transform="rotate(-18 600 450)"/>
+  <ellipse cx="600" cy="450" rx="440" ry="180" fill="none" stroke="#ff70a6" stroke-width="5" transform="rotate(18 600 450)"/>
+  <circle cx="600" cy="450" r="110" fill="#e0fbfc"/>
+  <polygon points="600,260 635,415 790,450 635,485 600,640 565,485 410,450 565,415" fill="#ff70a6"/>
+  <text x="100" y="810" font-family="monospace" font-size="36" fill="#e0fbfc">HYPERLINK // Y2K.EXE</text>
+</svg>

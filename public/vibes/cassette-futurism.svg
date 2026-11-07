@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#d8d4c8"/>
+  <rect x="60" y="60" width="1080" height="780" rx="18" fill="#e6e2d6" stroke="#22211f" stroke-width="6"/>
+  <rect x="110" y="110" width="620" height="440" rx="10" fill="#1e201d" stroke="#22211f" stroke-width="4"/>
+  <circle cx="420" cy="330" r="150" fill="none" stroke="#ff5500" stroke-width="5"/>
+  <circle cx="420" cy="330" r="95" fill="none" stroke="#e6e2d6" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="230" y1="330" x2="610" y2="330" stroke="#ff5500" stroke-width="3"/>
+  <line x1="420" y1="140" x2="420" y2="520" stroke="#ff5500" stroke-width="3"/>
+  <rect x="780" y="110" width="310" height="190" rx="8" fill="#ff5500" stroke="#22211f" stroke-width="4"/>
+  <text x="815" y="225" font-family="monospace" font-size="68" font-weight="700" fill="#1e201d">SYS-77</text>
+  <g fill="#22211f">
+    <circle cx="835" cy="400" r="34"/>
+    <circle cx="935" cy="400" r="34"/>
+    <circle cx="1035" cy="400" r="34"/>
+    <rect x="110" y="610" width="980" height="16" rx="8"/>
+    <rect x="110" y="655" width="980" height="16" rx="8"/>
+    <rect x="110" y="700" width="980" height="16" rx="8"/>
+  </g>
+</svg>

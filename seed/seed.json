@@ -1,0 +1,754 @@
+{
+  "$schema": "https://emdashcms.com/seed.schema.json",
+  "version": "1",
+  "meta": {
+    "name": "Build Night — What's Your Vibe?",
+    "description": "A Bauhaus & Rothko starter portfolio with a kaleidoscope of aesthetic vibes for Cloudflare Build Night.",
+    "author": "Cloudflare Build Night"
+  },
+  "settings": {
+    "title": "What's your vibe?",
+    "tagline": "Pick a direction. Make it yours."
+  },
+  "collections": [
+    {
+      "slug": "projects",
+      "label": "Projects",
+      "labelSingular": "Project",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "search",
+        "seo"
+      ],
+      "urlPattern": "/work/{slug}",
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "featured_image",
+          "label": "Featured Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "slug": "client",
+          "label": "Vibe Archetype",
+          "type": "string"
+        },
+        {
+          "slug": "year",
+          "label": "Era",
+          "type": "string"
+        },
+        {
+          "slug": "summary",
+          "label": "Summary",
+          "type": "text",
+          "searchable": true
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        },
+        {
+          "slug": "gallery",
+          "label": "Gallery",
+          "type": "repeater",
+          "validation": {
+            "maxItems": 24,
+            "subFields": [
+              {
+                "slug": "image",
+                "label": "Image",
+                "type": "image",
+                "required": true
+              },
+              {
+                "slug": "caption",
+                "label": "Caption",
+                "type": "text"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "url",
+          "label": "Project URL",
+          "type": "url"
+        }
+      ]
+    },
+    {
+      "slug": "pages",
+      "label": "Pages",
+      "labelSingular": "Page",
+      "supports": [
+        "drafts",
+        "revisions",
+        "preview",
+        "search",
+        "seo"
+      ],
+      "urlPattern": "/{slug}",
+      "fields": [
+        {
+          "slug": "title",
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "searchable": true
+        },
+        {
+          "slug": "content",
+          "label": "Content",
+          "type": "portableText",
+          "searchable": true
+        }
+      ]
+    }
+  ],
+  "taxonomies": [
+    {
+      "name": "tag",
+      "label": "Tags",
+      "labelSingular": "Tag",
+      "hierarchical": false,
+      "collections": [
+        "projects"
+      ],
+      "terms": [
+        {
+          "slug": "geometric",
+          "label": "Geometric"
+        },
+        {
+          "slug": "color-field",
+          "label": "Color Field"
+        },
+        {
+          "slug": "brutalist",
+          "label": "Brutalist"
+        },
+        {
+          "slug": "retro-tech",
+          "label": "Retro Tech"
+        },
+        {
+          "slug": "editorial",
+          "label": "Editorial"
+        },
+        {
+          "slug": "kinetic",
+          "label": "Kinetic"
+        },
+        {
+          "slug": "analog-print",
+          "label": "Analog Print"
+        },
+        {
+          "slug": "industrial",
+          "label": "Industrial"
+        }
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "primary",
+      "label": "Primary Navigation",
+      "items": [
+        {
+          "type": "custom",
+          "label": "Vibes",
+          "url": "/work"
+        },
+        {
+          "type": "custom",
+          "label": "About",
+          "url": "/about"
+        },
+        {
+          "type": "custom",
+          "label": "Contact",
+          "url": "/contact"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "pages": [
+      {
+        "id": "about",
+        "slug": "about",
+        "status": "published",
+        "data": {
+          "title": "Hi, I'm [Your Name]",
+          "content": [
+            {
+              "_type": "block",
+              "style": "h2",
+              "_key": "ab0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab1",
+                  "text": "Who I Am"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ab2",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab3",
+                  "text": "Write a couple of sentences introducing yourself. What are you studying or curious about right now? What kind of problems or ideas get you excited?"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "h2",
+              "_key": "ab4",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab5",
+                  "text": "What I'm Building & Learning"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ab6",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab7",
+                  "text": "Share a project you're proud of, a class or rabbit hole you're deep in this semester, or what you're experimenting with tonight at Build Night."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "h2",
+              "_key": "ab8",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab9",
+                  "text": "Beyond the Screen"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ab10",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ab11",
+                  "text": "What shapes your taste when you aren't writing code? Mention the music, books, games, sports, films, or hobbies that make you who you are."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "projects": [
+      {
+        "id": "bauhaus-rothko",
+        "slug": "bauhaus-rothko",
+        "status": "published",
+        "data": {
+          "title": "Bauhaus × Rothko",
+          "client": "Color Field & Constructivism",
+          "year": "1919 / 1958",
+          "summary": "Architectural Bauhaus geometry intersecting soft, luminous Rothko pigment fields on warm archival paper.",
+          "featured_image": {
+            "id": "media-bauhaus-rothko",
+            "src": "/vibes/bauhaus-rothko.svg",
+            "alt": "Stacked crimson, ochre, and ultramarine Rothko color fields crossed by Bauhaus geometric forms",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "br0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "br1",
+                  "text": "What happens when strict Weimar grid discipline meets emotional color fields? Heavy 2px structural borders hold the page together while deep crimson, saffron ochre, and midnight ultramarine glow from within."
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "h2",
+              "_key": "br2",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "br3",
+                  "text": "How to steal this vibe"
+                }
+              ]
+            },
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "br4",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "br5",
+                  "text": "Pair high-contrast serif headings with crisp monospace metadata labels, exposed grid borders, and warm paper backgrounds (#f6f1e7)."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "geometric",
+            "color-field"
+          ]
+        }
+      },
+      {
+        "id": "swiss-brutalist",
+        "slug": "swiss-brutalist",
+        "status": "published",
+        "data": {
+          "title": "Swiss Brutalist Grid",
+          "client": "International Typographic Style",
+          "year": "1968 / 2026",
+          "summary": "Exposed hairlines, oversized neo-grotesque typography, and unapologetic structural honesty.",
+          "featured_image": {
+            "id": "media-swiss-brutalist",
+            "src": "/vibes/swiss-brutalist.svg",
+            "alt": "Swiss Brutalist grid with vermilion accent block and bold monospace typography",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "sb0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "sb1",
+                  "text": "Inspired by Josef Müller-Brockmann concert posters and raw industrial spec sheets. Every container shows its seams, and typography does 90% of the visual heavy lifting."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "brutalist",
+            "geometric"
+          ]
+        }
+      },
+      {
+        "id": "crt-terminal",
+        "slug": "crt-terminal",
+        "status": "published",
+        "data": {
+          "title": "Late-Night CRT Terminal",
+          "client": "Phosphor & Monospace",
+          "year": "1984 / 2026",
+          "summary": "Glowing P1 phosphor green, amber status readouts, scanlines, and zero-fluff command-line clarity.",
+          "featured_image": {
+            "id": "media-crt-terminal",
+            "src": "/vibes/crt-terminal.svg",
+            "alt": "Phosphor green CRT terminal screen showing Worker deployment telemetry",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ct0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ct1",
+                  "text": "For systems programmers, cybersecurity tinkerers, and anyone who feels most at home in a dark terminal window. Turn your portfolio into an interactive manual page or live telemetry console."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "retro-tech",
+            "brutalist"
+          ]
+        }
+      },
+      {
+        "id": "risograph-zine",
+        "slug": "risograph-zine",
+        "status": "published",
+        "data": {
+          "title": "Risograph Zine Studio",
+          "client": "DIY Print & Soy Ink",
+          "year": "1994 / 2026",
+          "summary": "Fluorescent pink and blue ink layers, halftone grain, tactile paper warmth, and playful collage energy.",
+          "featured_image": {
+            "id": "media-risograph-zine",
+            "src": "/vibes/risograph-zine.svg",
+            "alt": "Overlapping fluorescent pink, cyan, and yellow Risograph print circles",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "rz0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "rz1",
+                  "text": "Who says software websites have to look sterile? Bring independent print culture to the web with multiply-blended ink Spot colors, slight rotations, and expressive editorial serifs."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "editorial",
+            "color-field"
+          ]
+        }
+      },
+      {
+        "id": "solarpunk-botanical",
+        "slug": "solarpunk-botanical",
+        "status": "published",
+        "data": {
+          "title": "Solarpunk Botanical Lab",
+          "client": "Archival Field Notes",
+          "year": "2026",
+          "summary": "Forest greens, warm brass sun-dials, natural linen textures, and calm scientific notebook typography.",
+          "featured_image": {
+            "id": "media-solarpunk-botanical",
+            "src": "/vibes/solarpunk-botanical.svg",
+            "alt": "Botanical illustration framed inside an archival field notebook border with a golden sun",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "sp0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "sp1",
+                  "text": "A hopeful, organic aesthetic combining 19th-century naturalist field journals with clean modern web typography. Ideal for research logs, essays, and hardware/climate projects."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "editorial"
+          ]
+        }
+      },
+      {
+        "id": "kinetic-y2k",
+        "slug": "kinetic-y2k",
+        "status": "published",
+        "data": {
+          "title": "Kinetic Vapor & Y2K Web",
+          "client": "Early-Web Optimism",
+          "year": "2000 / 2026",
+          "summary": "Orbital vector rings, electric cyan gradients, pixel accents, and the spirit of the weird, handmade web.",
+          "featured_image": {
+            "id": "media-kinetic-y2k",
+            "src": "/vibes/kinetic-y2k.svg",
+            "alt": "Orbital vector rings and four-point star over an electric indigo-to-cyan gradient",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "yk0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "yk1",
+                  "text": "Before every website used the same three templates, personal homepages were playgrounds for experiments, custom cursors, and bold vector art. Bring that energy back."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "kinetic",
+            "retro-tech"
+          ]
+        }
+      },
+      {
+        "id": "ukiyo-woodblock",
+        "slug": "ukiyo-woodblock",
+        "status": "published",
+        "data": {
+          "title": "Ukiyo-e Woodblock Print",
+          "client": "Prussian Blue & Washi Paper",
+          "year": "1831 / 2026",
+          "summary": "Bokashi indigo sky gradients, carved ink outlines, vertical typography, and vermilion hankō seal stamps.",
+          "featured_image": {
+            "id": "media-ukiyo-woodblock",
+            "src": "/vibes/ukiyo-woodblock.svg",
+            "alt": "Ukiyo-e woodblock wave composition with bokashi indigo gradient and crimson sun",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "uk0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "uk1",
+                  "text": "Inspired by Edo-period woodblock prints where every color required a separately carved cherrywood block. Combine warm handmade paper tones, deep Prussian blue gradients, and crisp ink borders."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "analog-print",
+            "editorial"
+          ]
+        }
+      },
+      {
+        "id": "cassette-futurism",
+        "slug": "cassette-futurism",
+        "status": "published",
+        "data": {
+          "title": "1970s NASA & Braun Industrial",
+          "client": "Dieter Rams & Telemetry",
+          "year": "1973 / 2026",
+          "summary": "Anodized aluminum grey, international orange toggle accents, precision reticle dials, and tactile hardware grids.",
+          "featured_image": {
+            "id": "media-cassette-futurism",
+            "src": "/vibes/cassette-futurism.svg",
+            "alt": "Braun and Apollo-inspired hardware panel with international orange accents and radar reticle",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "cf0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "cf1",
+                  "text": "Less, but better. Channel 1970s industrial hardware, synthesizer faceplates, and Apollo flight manuals—where every button, label, and status indicator has a physical purpose."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "industrial",
+            "retro-tech"
+          ]
+        }
+      },
+      {
+        "id": "stained-glass-deco",
+        "slug": "stained-glass-deco",
+        "status": "published",
+        "data": {
+          "title": "Art Deco & Cathedral Glass",
+          "client": "Brass Linework & Jewel Tones",
+          "year": "1929 / 2026",
+          "summary": "Symmetrical sunburst geometry, metallic gold borders, and luminous emerald, ruby, and sapphire facets.",
+          "featured_image": {
+            "id": "media-stained-glass-deco",
+            "src": "/vibes/stained-glass-deco.svg",
+            "alt": "Art Deco geometric stained glass medallion with gold linework and jewel tones",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "sd0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "sd1",
+                  "text": "Dark obsidian backgrounds framed by fine brass hairlines and rich jewel-toned panels. Perfect for dramatic, high-craft portfolios that feel like stepping into a 1920s theater lobby."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "geometric",
+            "color-field"
+          ]
+        }
+      },
+      {
+        "id": "blueprint-atelier",
+        "slug": "blueprint-atelier",
+        "status": "published",
+        "data": {
+          "title": "Cyanotype & Architect's Blueprint",
+          "client": "Prussian Cyan & Chalk Line",
+          "year": "1842 / 2026",
+          "summary": "Hand-drafted orthographic projections, compass arcs, dimension callouts, and title blocks on deep cyanotype blue.",
+          "featured_image": {
+            "id": "media-blueprint-atelier",
+            "src": "/vibes/blueprint-atelier.svg",
+            "alt": "Architectural blueprint with geometric compass construction lines on Prussian blue grid",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ba0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ba1",
+                  "text": "Turn your site into an engineer's drafting table. White and sky-blue hairlines over deep cyanotype blue (#0b3b75) with corner title blocks, scale notations, and technical diagrams."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "industrial",
+            "geometric"
+          ]
+        }
+      },
+      {
+        "id": "memphis-arcade",
+        "slug": "memphis-arcade",
+        "status": "published",
+        "data": {
+          "title": "1981 Milan Memphis Pop",
+          "client": "Postmodern Geometry",
+          "year": "1981 / 2026",
+          "summary": "Playful squiggles, offset hard shadows, electric coral and cyan shapes, and rule-breaking asymmetry.",
+          "featured_image": {
+            "id": "media-memphis-arcade",
+            "src": "/vibes/memphis-arcade.svg",
+            "alt": "Memphis Milano geometric collage with pink square, cyan circle, mint triangle, and bold black shadows",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "ma0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "ma1",
+                  "text": "When Ettore Sottsass and the Memphis Group rebelled against quiet minimalism in 1981, they filled rooms with bold clashing colors, squiggles, and tilted geometry. Loud, joyful, and impossible to ignore."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "kinetic",
+            "geometric"
+          ]
+        }
+      },
+      {
+        "id": "darkroom-contact",
+        "slug": "darkroom-contact",
+        "status": "published",
+        "data": {
+          "title": "Silver Gelatin Contact Sheet",
+          "client": "35mm Film & Wax Pencil",
+          "year": "1965 / 2026",
+          "summary": "Monochrome darkroom contact strips, film sprocket borders, amber frame numbers, and china-marker crop marks.",
+          "featured_image": {
+            "id": "media-darkroom-contact",
+            "src": "/vibes/darkroom-contact.svg",
+            "alt": "35mm darkroom contact sheet with film perforations and red grease-pencil selection box",
+            "width": 1200,
+            "height": 900
+          },
+          "content": [
+            {
+              "_type": "block",
+              "style": "normal",
+              "_key": "dc0",
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "dc1",
+                  "text": "Before digital folders, photographers printed an entire roll of 35mm film onto a single contact sheet and circled their favorite frame in red wax pencil. High-contrast monochrome with hand-drawn red accents."
+                }
+              ]
+            }
+          ]
+        },
+        "taxonomies": {
+          "tag": [
+            "analog-print",
+            "editorial"
+          ]
+        }
+      }
+    ]
+  }
+}

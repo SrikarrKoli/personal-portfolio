@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#efe9da"/>
+  <rect x="80" y="70" width="1040" height="760" fill="none" stroke="#264027" stroke-width="4"/>
+  <circle cx="600" cy="360" r="170" fill="#e6a13c"/>
+  <path d="M 600 760 L 600 320" stroke="#264027" stroke-width="10"/>
+  <path d="M 600 620 C 460 590, 420 460, 560 440 C 590 500, 600 570, 600 620 Z" fill="#2d5a3c"/>
+  <path d="M 600 540 C 740 510, 780 380, 640 360 C 610 420, 600 490, 600 540 Z" fill="#3f7a52"/>
+  <path d="M 320 760 Q 600 660 880 760" fill="none" stroke="#264027" stroke-width="6"/>
+  <text x="130" y="150" font-family="monospace" font-size="28" fill="#264027">FIG. 05 // FIELD NOTES</text>
+</svg>

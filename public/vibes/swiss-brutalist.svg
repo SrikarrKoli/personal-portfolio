@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <rect width="1200" height="900" fill="#f2efe9"/>
+  <g stroke="#111111" stroke-width="4">
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="0" y1="760" x2="1200" y2="760"/>
+    <line x1="360" y1="0" x2="360" y2="900"/>
+    <line x1="840" y1="0" x2="840" y2="900"/>
+  </g>
+  <rect x="360" y="180" width="480" height="360" fill="#ff3b1d"/>
+  <rect x="60" y="60" width="240" height="60" fill="#111111"/>
+  <text x="400" y="420" font-family="monospace" font-size="140" font-weight="900" fill="#111111">GRID</text>
+  <text x="60" y="680" font-family="sans-serif" font-size="96" font-weight="900" fill="#111111">01 // RAW</text>
+  <circle cx="1020" cy="360" r="110" fill="none" stroke="#111111" stroke-width="16"/>
+  <line x1="910" y1="360" x2="1130" y2="360" stroke="#111111" stroke-width="16"/>
+</svg>

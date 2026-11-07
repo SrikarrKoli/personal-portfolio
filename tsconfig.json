@@ -1,0 +1,21 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    ".cloudflare",
+    "cloudflare-project",
+    "src/trail/client.bundle.js",
+    "work",
+    "src/worker.ts",
+    "src/app-worker.ts"
+  ],
+  "compilerOptions": {
+    "types": [
+      "vite/client"
+    ]
+  }
+}

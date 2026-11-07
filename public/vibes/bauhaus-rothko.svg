@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <radialGradient id="r1" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#d63a2f"/>
+      <stop offset="75%" stop-color="#9b1d17"/>
+      <stop offset="100%" stop-color="#6b120e"/>
+    </radialGradient>
+    <radialGradient id="r2" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f2aa24"/>
+      <stop offset="75%" stop-color="#d8691e"/>
+      <stop offset="100%" stop-color="#9e3d12"/>
+    </radialGradient>
+    <radialGradient id="r3" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#274778"/>
+      <stop offset="80%" stop-color="#152642"/>
+      <stop offset="100%" stop-color="#0d1729"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="#181312"/>
+  <rect x="70" y="55" width="1060" height="310" rx="14" fill="url(#r1)"/>
+  <rect x="70" y="395" width="1060" height="230" rx="14" fill="url(#r2)"/>
+  <rect x="70" y="655" width="1060" height="190" rx="14" fill="url(#r3)"/>
+  <line x1="0" y1="740" x2="1200" y2="160" stroke="#161514" stroke-width="18"/>
+  <circle cx="600" cy="450" r="145" fill="#f6f1e7" stroke="#161514" stroke-width="14"/>
+  <polygon points="880,680 990,680 935,580" fill="#e8a317" stroke="#161514" stroke-width="10"/>
+  <rect x="210" y="160" width="90" height="90" fill="#1d3557" stroke="#f6f1e7" stroke-width="8"/>
+</svg>
