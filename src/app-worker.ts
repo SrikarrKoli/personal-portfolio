@@ -3,18 +3,12 @@ import landscapeHtml from "./landscape/world.html?raw";
 import landscapeJavascript from "./landscape/client.js?raw";
 import landscapeScene from "./landscape/scene.mjs?raw";
 import landscapeStyles from "./landscape/style.css?raw";
-import template from "./trail/world.html?raw";
 import favicon from "../public/favicon.svg?raw";
-import { profile } from "./data/profile";
-import { fontBase64, pixelFontBase64, monoFontBase64 } from "./trail/font";
+import { fontBase64, pixelFontBase64, monoFontBase64 } from "./fonts";
 const fontBytes = Uint8Array.from(atob(fontBase64), character => character.charCodeAt(0));
 const pixelFontBytes = Uint8Array.from(atob(pixelFontBase64), character => character.charCodeAt(0));
 
 const monoFontBytes = Uint8Array.from(atob(monoFontBase64), character => character.charCodeAt(0));
-
-const escapeHtml = (text: string) => text.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]!);
-const html = template.replaceAll("__TRAIL_TITLE__", escapeHtml(profile.siteTitle)).replaceAll("__INTRODUCTION__", escapeHtml(profile.introduction));
-import javascript from "./trail/client.bundle.js?raw";
 
 const commonHeaders = {
   "X-Content-Type-Options": "nosniff",
@@ -54,12 +48,9 @@ export default {
     if (asset) {
       return new Response(request.method === "HEAD" ? null : asset[0], { headers: { ...commonHeaders, "Content-Type": asset[1], "Cache-Control": "public, max-age=0, must-revalidate" } });
     }
-    if (path === "/app/trail.js") {
-      return new Response(request.method === "HEAD" ? null : javascript, { headers: { ...commonHeaders, "Content-Type": "text/javascript; charset=utf-8", "Cache-Control": "public, max-age=0, must-revalidate" } });
+    if (path === "/app" || path === "") {
+      return new Response(request.method === "HEAD" ? null : landscapeHtml, { headers: { ...commonHeaders, "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'" } });
     }
-    if (path === "/app" || path === "" || path === "/app/trail") {
-      return new Response(request.method === "HEAD" ? null : path === "/app/trail" ? html : landscapeHtml, { headers: { ...commonHeaders, "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'" } });
-    }
-    return new Response("Trail not found", { status: 404, headers: commonHeaders });
+    return new Response("Not found", { status: 404, headers: commonHeaders });
   },
 } satisfies ExportedHandler;
