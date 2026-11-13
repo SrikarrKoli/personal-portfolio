@@ -1,5 +1,8 @@
 ---
-import Base from '../layouts/Base.astro';
+import PortfolioPage from '../layouts/PortfolioPage.astro';
 Astro.response.status = 404;
 ---
-<Base title="Page not found" robots="noindex"><div class="page-wrap"><header class="page-header"><p class="eyebrow">404</p><h1>This page doesn’t exist.</h1><p class="lead">You can go back to the home page or see my projects.</p><div class="page-actions"><a class="button" href="/">Back to the trail</a><a class="button button-secondary" href="/work">Explore projects</a></div></header></div></Base>
+<PortfolioPage title="Page not found" section="404" description="This page doesn’t exist.">
+<header class="page-heading"><p class="eyebrow">404</p><h1>This page doesn’t exist.</h1></header><p class="lead">You can go back to the home page or see my projects.</p><p class="not-found-actions"><a class="text-link" href="/">Go to the home page</a><a class="text-link" href="/work">Explore projects ↗</a></p>
+</PortfolioPage>
+<style>.not-found-actions{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem}</style>

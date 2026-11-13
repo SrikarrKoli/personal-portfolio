@@ -22,6 +22,6 @@ export const profile = {
 export const destinations = {
   about: { label: 'About', title: 'Hi, I’m Srikar.', region: 'UT Austin tower', description: profile.bio, link: '/about', linkText: 'More about me', note: '' },
   projects: { label: 'Projects', title: 'Projects I’ve worked on', region: 'Lakeside workshop', description: 'I’ve worked on a transfer planner, a social AR prototype, a running coach, and a few other projects.', link: '/work', linkText: 'See all projects', note: '' },
-  summit: { label: 'Next trails', title: 'Places I’d love to visit', region: 'The overlook', description: profile.nextTrails, link: '/overlook', linkText: 'More about my travel plans', note: '' },
+  summit: { label: 'Next trails', title: 'Places I’d love to visit', region: 'The overlook', description: profile.nextTrails, link: '/hobbies', linkText: 'More about my travel plans', note: '' },
   contact: { label: 'Contact', title: 'Want to connect?', region: 'Base camp', description: 'Email me if you want to talk about product, AI, or a project you’re working on. You can also find me on LinkedIn.', link: '/contact', linkText: 'Get in touch', note: '' },
 } as const;

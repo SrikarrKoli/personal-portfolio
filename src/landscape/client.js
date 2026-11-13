@@ -3,8 +3,9 @@ import { createLivingScene } from './living-scene.mjs';
 
 const motionButton = document.querySelector('#motion');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let paused = reducedMotion.matches;
-try { paused = paused || localStorage.getItem('portfolio-motion-paused') === 'true'; } catch {}
+let storedPreference = null;
+try { storedPreference = localStorage.getItem('portfolio-motion-paused'); } catch {}
+let paused = storedPreference === null ? reducedMotion.matches : storedPreference === 'true';
 function updateMotion() {
   document.body.classList.toggle('motion-paused', paused);
   motionButton.setAttribute('aria-pressed', String(paused));
@@ -77,7 +78,7 @@ function triggerEffect(name, point, { ambient = false, count } = {}) {
   if (!ambient) cooldowns.set(name, now);
   if (!ambient) sceneStatus.textContent = effects[name].label;
   const origin = point || effectAnchor(name, geometry, sceneWidth, sceneHeight);
-  if (paused || reducedMotion.matches || typeof Element.prototype.animate !== 'function') {
+  if (paused || typeof Element.prototype.animate !== 'function') {
     return;
   }
   if (!ambient && (name === 'clouds' || name === 'leaves')) livingScene?.gust();
@@ -120,7 +121,7 @@ stage.addEventListener('click', event => {
 });
 function syncAmbient() {
   clearTimeout(ambientTimer);
-  const stopped = paused || reducedMotion.matches || document.hidden;
+  const stopped = paused || document.hidden;
   livingScene?.setPaused(stopped);
   if (stopped) { clearEffects(); return; }
   function tick() {
