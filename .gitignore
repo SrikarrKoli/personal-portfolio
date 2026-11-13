@@ -27,9 +27,6 @@ npm-debug.log*
 # macOS
 .DS_Store
 
-# Generated trail client (npm run build:trail)
-src/trail/client.bundle.js
-
 # Other local configuration and credentials
 .env.*
 !.env.example

@@ -17,7 +17,7 @@ About, Hobbies, Projects, Career, and Contact use full-width layouts with matchi
 - Astro 7, React 19, and TypeScript
 - Cloudflare Workers and the `cf` CLI
 - EmDash CMS with Cloudflare D1
-- A canvas/WebGL landscape renderer and a retained Three.js walking-world prototype
+- A canvas/WebGL landscape renderer
 - Locally served fonts, with their license files in `public/fonts/`
 
 ## Run locally
@@ -27,11 +27,11 @@ npm ci
 npm run dev
 ```
 
-Use the local URL printed by the development server. The development script builds the trail client before starting both Workers.
+Use the local URL printed by the development server. The development script starts both Workers.
 
 ```sh
 npm run check  # Astro and Worker TypeScript checks
-npm run build  # Generate the trail bundle and production build
+npm run build  # Production build
 ```
 
 ## Project structure
@@ -44,8 +44,8 @@ npm run build  # Generate the trail bundle and production build
 | `src/data/` | Authored biography and project information |
 | `public/portfolio/` | Landscape art and page styles |
 | `src/app-worker.ts` | Landing scene and app assets |
+| `src/fonts.ts` | Embedded fonts served by the app Worker at `/app/*.woff2` |
 | `src/worker.ts` | Main site, EmDash, and app service routing |
-| `src/trail/` | Earlier walking-world prototype, available at `/app/trail` |
 | `cloudflare.config.ts` | Main and auxiliary Worker configuration |
 
 ## Deploy
