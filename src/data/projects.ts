@@ -31,6 +31,16 @@ export const projects: Project[] = [
     repo: `${github}/transferpath`, demo: 'https://transferpath.vercel.app', source: [`${github}/transferpath/blob/main/README.md`],
   },
   {
+    id: 'pokefun', title: 'Poke.fun', category: 'Gaming & Web3', status: 'Solana Devnet prototype', role: 'Frontend & product contributor · team project', featured: true,
+    summary: 'We built a Pokémon card-battle game where people can buy cards, summon them, and battle a real opponent, without needing to know anything about crypto first.',
+    stack: ['Next.js', 'React', 'TypeScript', 'Go', 'Solana', 'Anchor', 'Privy', 'Phantom'],
+    problem: 'Collectors have cards they would like to battle with, but there’s no simple place to use them in a match, and getting started with crypto still means wallets, gas fees, and seed phrases.',
+    solution: 'We built a card marketplace and battle game where guests and email users can play right away, and Phantom users can buy cards and enter Devnet SOL matches.',
+    howItWorks: ['People sign in as a guest, with email through Privy, or with Phantom. Prices show in dollars by default and can switch to SOL.', 'The marketplace and My Cards pages let players browse by set, rarity, and grade, buy cards, make offers, and list cards for sale. Purchases settle on Solana Devnet.', 'A Go server matches two players by power tier and rating and decides every turn of the battle. A Solana escrow program holds both entries and pays the winner on Devnet.'],
+    contribution: 'I worked on the frontend and product: the pixel-art landing page, sign-in, marketplace, My Cards, loadout and summon animation, battle screens, and game audio. I also made the demo video.',
+    demo: 'https://pokefun-sol-web.onrender.com', source: ['https://explorer.solana.com/address/FphH5qUaMxam8wvewVXNxaLVGvY8UqDBHBRhwbxNYF1J?cluster=devnet'],
+  },
+  {
     id: 'spots', title: 'Spots', category: 'Social AR', status: "Meta Ray-Ban track prototype", role: 'Hackathon team contributor', featured: true,
     summary: "We built a Meta Ray-Ban track prototype that recognizes physical objects through a camera and lets people leave notes and replies on them.",
     stack: ['React', 'TypeScript', 'FastAPI', 'OpenCV', 'SQLite', 'Ollama'],
