@@ -41,7 +41,7 @@ const nextProject = project ? projects[(position + 1) % projects.length] : null;
         <section><h2>What we built</h2><p>{project.solution}</p></section>
         <section><h2>How it works</h2><ol>{project.howItWorks.map((step) => <li>{step}</li>)}</ol></section>
         <section><h2>My contribution</h2><p>{project.contribution}</p></section>
-        <section class="project-sources"><h2>Project documentation</h2><ul>{project.source.map((url) => <li><a href={url}>{url.includes('README') ? 'Project README' : url.includes('PRESENTATION') ? 'Implementation & presentation notes' : url.includes('About-ME') ? 'GitHub profile & project background' : url.includes('arnavvalvekar') ? 'Original team repository' : url.includes('explorer.solana.com') ? 'Devnet escrow program on Solana Explorer' : 'Repository & implementation'}</a></li>)}</ul></section>
+        <section class="project-sources"><h2>Project documentation</h2><ul>{project.source.map((url) => <li><a href={url}>{url.includes('README') ? 'Project README' : url.includes('PRESENTATION') ? 'Implementation & presentation notes' : url.includes('About-ME') ? 'GitHub profile & project background' : url.includes('arnavvalvekar') || url.includes('shruthikalle') ? 'Original team repository' : url.includes('explorer.solana.com') ? 'Devnet escrow program on Solana Explorer' : 'Repository & implementation'}</a></li>)}</ul></section>
       </div>
       {nextProject && <nav class="next-project" aria-label="Next project"><p>Next project</p><a href={`/work/${nextProject.id}`}>{nextProject.title} <span aria-hidden="true">↗</span></a></nav>}
     </> : cmsProject && <>
