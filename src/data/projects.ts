@@ -14,6 +14,7 @@ export interface Project {
   repo?: string;
   demo?: string;
   presentation?: string;
+  video?: string;
   source: string[];
   featured: boolean;
 }
@@ -38,7 +39,7 @@ export const projects: Project[] = [
     solution: 'We built a card marketplace and battle game where guests and email users can play right away, and Phantom users can buy cards and enter Devnet SOL matches.',
     howItWorks: ['People sign in as a guest, with email through Privy, or with Phantom. Prices show in dollars by default and can switch to SOL.', 'The marketplace and My Cards pages let players browse by set, rarity, and grade, buy cards, make offers, and list cards for sale. Purchases settle on Solana Devnet.', 'A Go server matches two players by power tier and rating and decides every turn of the battle. A Solana escrow program holds both entries and pays the winner on Devnet.'],
     contribution: 'I worked on the frontend and product: the pixel-art landing page, sign-in, marketplace, My Cards, loadout and summon animation, battle screens, and game audio. I also made the demo video.',
-    repo: `${github}/Poke.fun`, demo: 'https://pokefun-sol-web.onrender.com/#battles', source: [`${github}/Poke.fun/blob/main/README.md`, 'https://github.com/shruthikalle/Poke.fun', 'https://explorer.solana.com/address/FphH5qUaMxam8wvewVXNxaLVGvY8UqDBHBRhwbxNYF1J?cluster=devnet'],
+    repo: `${github}/Poke.fun`, demo: 'https://pokefun-sol-web.onrender.com/#battles', video: 'https://www.youtube.com/watch?v=nzXCzl8QO2A', source: [`${github}/Poke.fun/blob/main/README.md`, 'https://github.com/shruthikalle/Poke.fun', 'https://explorer.solana.com/address/FphH5qUaMxam8wvewVXNxaLVGvY8UqDBHBRhwbxNYF1J?cluster=devnet'],
   },
   {
     id: 'spots', title: 'Spots', category: 'Social AR', status: "Meta Ray-Ban track prototype", role: 'Hackathon team contributor', featured: true,

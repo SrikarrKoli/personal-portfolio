@@ -29,6 +29,7 @@ const nextProject = project ? projects[(position + 1) % projects.length] : null;
           {project.repo && <a class="button" href={project.repo}>View repository</a>}
           {project.demo && <a class="button button-secondary" href={project.demo}>Visit live app</a>}
           {project.presentation && <a class="button" href={project.presentation}>View presentation</a>}
+          {project.video && <a class="button button-secondary" href={project.video}>Watch demo video</a>}
         </div>
       </header>
       <dl class="project-facts">
